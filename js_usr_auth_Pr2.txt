@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <style> 
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .div {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+    h2 { text-align: center; }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    
+  </style> 
+</head>
+<body>
+  <div class="div">
+    <h2>Login</h2>
+    <form id="Form">
+      <input type="text" id="user" placeholder="Enter Username" required />
+      <input type="password" id="pass" placeholder="Enter Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <center><h4 id="msg"></h4></center>
+  </div>
+
+  <script>
+    // Hardcoded user credentials
+    const validUsername = "user123";
+    const validPassword = "pass123";
+
+    document.getElementById("Form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      let a = document.getElementById("user").value;
+      let b = document.getElementById("pass").value;
+
+      if (a === validUsername && b === validPassword) {
+        alert("Valid Username Or Pass");
+        document.getElementById("msg").innerHTML="Login Successful";
+      } else {
+        alert("InValid Username Or Pass");
+        document.getElementById("msg").innerHTML="Login Unsuccessful";
+      }
+    });
+  </script>
+</body>
+</html>
